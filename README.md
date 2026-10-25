@@ -88,8 +88,3 @@ Estas construcciones no se pudieron probar fuera de Databricks; confirmarlas en 
 - Toda rama de prueba sale de `baseline-v1`.
 - `main` no tiene `.github/copilot-instructions.md`, `AGENTS.md` ni skills: F1 es el control sin instrucciones.
 - Los outputs de notebooks se eliminan con `nbstripout`. La rama del defecto S4 (PII ficticia en outputs) se commitea con `--no-verify` a propósito.
-
-
---------------------------------------------------------------
-Línea agregada para testing de esta vainita....
---------------------------------------------------------------
