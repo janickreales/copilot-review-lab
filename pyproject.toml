@@ -1,0 +1,28 @@
+[project]
+name = "retail-margin-lakehouse"
+version = "0.1.0"
+description = "Pipeline medallion sobre samples.tpch para el laboratorio de Copilot code review"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-include = ["*.ipynb"]
+# Ruff no entiende las celdas %sql de Databricks dentro de un .ipynb
+# (las parsea como Python); ese notebook se revisa a mano y con Copilot.
+extend-exclude = ["notebooks/04_dim_supplier_part.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# Los notebooks de Databricks reciben spark, dbutils y display del runtime,
+# importan después de %run ./00_config y llevan celdas markdown largas.
+"notebooks/*" = ["F821", "E402", "I001", "E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

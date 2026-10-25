@@ -1,0 +1,18 @@
+[sqlfluff]
+# Se lintea solo src/sql (ver CI y pre-commit). El notebook SQL de notebooks/
+# queda fuera: sus separadores de celda y CREATE WIDGET no son SQL plano.
+dialect = databricks
+templater = placeholder
+max_line_length = 120
+
+[sqlfluff:templater:placeholder]
+param_style = colon
+ingestion_log_table = bronze_ingestion_log
+dq_results_table = dq_results
+target_table = silver_lineitem
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = upper
+
+[sqlfluff:rules:capitalisation.functions]
+extended_capitalisation_policy = lower

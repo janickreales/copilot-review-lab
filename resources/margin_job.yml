@@ -1,0 +1,90 @@
+resources:
+  jobs:
+    # Orquestación principal: DAG de 8 tasks sobre compute serverless.
+    margin_pipeline:
+      name: retail_margin_pipeline_${bundle.target}
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: env
+          default: ${var.env}
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+        - name: run_id
+          default: "{{job.run_id}}"
+
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"
+        timezone_id: America/Bogota
+        pause_status: ${var.schedule_pause_status}
+
+      tasks:
+        - task_key: setup
+          notebook_task:
+            notebook_path: ../notebooks/00_config.py
+
+        - task_key: ingest_bronze
+          depends_on:
+            - task_key: setup
+          notebook_task:
+            notebook_path: ../notebooks/01_ingest_bronze.ipynb
+
+        - task_key: quality_bronze
+          depends_on:
+            - task_key: ingest_bronze
+          notebook_task:
+            notebook_path: ../notebooks/02_quality_bronze.py
+
+        - task_key: silver_orders
+          depends_on:
+            - task_key: quality_bronze
+          notebook_task:
+            notebook_path: ../notebooks/03_silver_orders.py
+
+        - task_key: dim_supplier_part
+          depends_on:
+            - task_key: quality_bronze
+          notebook_task:
+            notebook_path: ../notebooks/04_dim_supplier_part.ipynb
+
+        - task_key: fact_margin
+          depends_on:
+            - task_key: silver_orders
+            - task_key: dim_supplier_part
+          notebook_task:
+            notebook_path: ../notebooks/05_fact_margin.py
+
+        - task_key: gold_aggregates
+          depends_on:
+            - task_key: fact_margin
+          notebook_task:
+            notebook_path: ../notebooks/06_gold_aggregates.sql
+
+        - task_key: export_report
+          depends_on:
+            - task_key: gold_aggregates
+          notebook_task:
+            notebook_path: ../notebooks/07_export_report.ipynb
+
+    # Orquestación alternativa: un solo notebook que ejecuta los demás con
+    # dbutils.notebook.run. Útil para corridas interactivas o de depuración.
+    margin_pipeline_orchestrated:
+      name: retail_margin_pipeline_orchestrated_${bundle.target}
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: env
+          default: ${var.env}
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+        - name: run_id
+          default: "{{job.run_id}}"
+
+      tasks:
+        - task_key: orchestrator
+          notebook_task:
+            notebook_path: ../notebooks/08_orchestrator.py

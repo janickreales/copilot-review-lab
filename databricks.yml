@@ -1,0 +1,43 @@
+# Databricks Asset Bundle: retail_margin_lakehouse
+# Pipeline medallion (bronze -> silver -> gold) sobre samples.tpch.
+#
+# El host del workspace no se fija aquí: se toma del perfil de autenticación
+# (DATABRICKS_CONFIG_PROFILE o `databricks bundle ... -p <perfil>`).
+
+bundle:
+  name: retail_margin_lakehouse
+
+include:
+  - resources/*.yml
+
+variables:
+  env:
+    description: Ambiente lógico; selecciona config/<env>.json
+    default: dev
+  catalog:
+    description: Catálogo de Unity Catalog donde se crean las tablas
+    default: workspace
+  schema:
+    description: Esquema de destino de todas las capas
+    default: margin_dev
+  schedule_pause_status:
+    description: Estado del schedule del job (PAUSED en dev)
+    default: PAUSED
+
+targets:
+  dev:
+    mode: development
+    default: true
+    variables:
+      env: dev
+      schema: margin_dev
+      schedule_pause_status: PAUSED
+
+  prod:
+    mode: production
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      env: prod
+      schema: margin_prod
+      schedule_pause_status: PAUSED
