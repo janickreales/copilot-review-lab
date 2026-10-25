@@ -92,6 +92,6 @@ write_delta(fact, cfg.table("fact_margin"))
 # COMMAND ----------
 
 fact_rows = spark.table(cfg.table("fact_margin")).count()
-dbutils.jobs.taskValues.set(key="fact_rows", value=fact_rows)
+set_task_value("fact_rows", fact_rows)
 log.info("fact_margin written with %s rows", fact_rows)
 dbutils.notebook.exit(json.dumps({"fact_rows": fact_rows}))

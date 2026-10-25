@@ -6,7 +6,7 @@
 # MAGIC
 # MAGIC **Uso:**
 # MAGIC - Como task `setup` del job: crea el esquema de destino si no existe.
-# MAGIC - Vía `%run ./00_config` desde los demás notebooks: deja disponibles `cfg`, `RUN_ID`, `SQL_DIR`, `PROJECT_ROOT` y `log`.
+# MAGIC - Vía `%run ./00_config` desde los demás notebooks: deja disponibles `cfg`, `RUN_ID`, `SQL_DIR`, `PROJECT_ROOT`, `log` y `set_task_value()`.
 # MAGIC
 # MAGIC **No** termina con `dbutils.notebook.exit`: hacerlo cortaría la ejecución del notebook que lo incluye con `%run`.
 # MAGIC
@@ -47,6 +47,21 @@ cfg = load_config(
 RUN_ID = dbutils.widgets.get("run_id") or f"interactive-{uuid.uuid4().hex[:12]}"
 SQL_DIR = os.path.join(PROJECT_ROOT, "src", "sql")
 log = get_logger("retail_margin")
+
+
+def set_task_value(key, value):
+    """Publica un task value para los tasks siguientes del job.
+
+    Si el notebook corre vía dbutils.notebook.run (08_orchestrator), no es un
+    task del job y Databricks rechaza el set; en ese caso se omite y el valor
+    viaja en el JSON de dbutils.notebook.exit.
+    """
+    try:
+        dbutils.jobs.taskValues.set(key=key, value=value)
+    except Exception as exc:
+        if "not a task run" not in str(exc):
+            raise
+        log.info("Skipping task value %s: notebook is not running as a job task", key)
 
 # COMMAND ----------
 
