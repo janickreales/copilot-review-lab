@@ -9,7 +9,7 @@ resources:
         - name: env
           default: ${var.env}
         - name: catalog
-          default: ${var.catalog}
+          default: workspace
         - name: schema
           default: ${var.schema}
         - name: run_id
@@ -52,7 +52,6 @@ resources:
         - task_key: fact_margin
           depends_on:
             - task_key: silver_orders
-            - task_key: dim_supplier_part
           notebook_task:
             notebook_path: ../notebooks/05_fact_margin.py
 
