@@ -54,8 +54,8 @@ def check_unique(df: DataFrame, table: str, keys: Sequence[str], max_duplicate_r
 
     Las filas fallidas son las que sobran: total menos combinaciones distintas.
     """
-    distinct = df.select(*keys).distinct().count()
-    return _result(table, "unique", ",".join(keys), total - distinct, total, max_duplicate_ratio)
+    duplicated_keys = df.groupBy(*keys).count().filter(F.col("count") > 1).count()
+    return _result(table, "unique", ",".join(keys), duplicated_keys, total, max_duplicate_ratio)
 
 
 def check_range(
