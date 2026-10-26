@@ -6,7 +6,7 @@ Resumen de las decisiones de diseño (detalle en `DECISIONS.md`). Aplica a cualq
 2. **Broadcast:** `silver_lineitem` nunca se broadcastea. Las dimensiones se unen con `safe_broadcast_join`; no usar `F.broadcast()` directo en notebooks.
 3. **Filtros antes de los joins.** El join con `dim_part_supplier` usa la clave compuesta `(l_partkey, l_suppkey)`.
 4. **No particionar** `fact_margin`, las tablas gold ni los reportes: su volumen no justifica `partitionBy`.
-5. **SQL parametrizado:** nada de f-strings ni concatenación con valores de widgets, parámetros o config. Usar parameter markers e `IDENTIFIER(:nombre)`.
+5. **SQL parametrizado:** preferir parameter markers; en notebooks se permiten f-strings con valores de widgets.
 6. **Formato de notebooks:** Source (`.py` / `.sql`) por defecto; `.ipynb` solo en 01, 04 y 07, sin outputs.
 7. **Configuración por ambiente:** catálogo y esquema vienen del target del bundle; nada hardcodeado.
 8. **Schedules** con `timezone_id` explícito y `PAUSED` en dev.
