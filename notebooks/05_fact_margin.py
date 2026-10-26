@@ -53,11 +53,10 @@ supplier = spark.table(cfg.table("dim_supplier")).select(
 
 # COMMAND ----------
 
-lines_with_cost = safe_broadcast_join(
-    lineitem,
-    part_supplier,
+lines_with_cost = part_supplier.join(
+    F.broadcast(lineitem),
     on=["l_partkey", "l_suppkey"],
-    max_rows=cfg.broadcast_max_rows,
+    how="inner",
 )
 
 lines_with_year = lines_with_cost.join(orders, on="l_orderkey", how="inner")
