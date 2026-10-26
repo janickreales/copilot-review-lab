@@ -31,7 +31,7 @@ STEPS = [
 step_params = {
     "env": cfg.env,
     "catalog": cfg.catalog,
-    "schema": cfg.schema,
+    "target_schema": cfg.schema,
     "run_id": RUN_ID,
 }
 
