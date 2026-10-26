@@ -21,7 +21,6 @@ MERGE INTO IDENTIFIER(:target_table) AS t  -- noqa: LT01
 USING silver_lineitem_updates AS s
     ON
         t.l_orderkey = s.l_orderkey
-        AND t.l_linenumber = s.l_linenumber
 WHEN MATCHED AND s._ingested_at > t._ingested_at THEN
     UPDATE SET
         t.l_partkey = s.l_partkey,
