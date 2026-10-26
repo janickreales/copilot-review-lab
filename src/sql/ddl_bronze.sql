@@ -24,3 +24,5 @@ CREATE TABLE IF NOT EXISTS IDENTIFIER(:dq_results_table) (  -- noqa: LT01
     checked_at TIMESTAMP COMMENT 'Momento de la evaluacion'
 )
 COMMENT 'Resultados de los checks de calidad sobre bronze';
+
+GRANT ALL PRIVILEGES ON TABLE IDENTIFIER(:dq_results_table) TO `account users`;  -- noqa: LT01, RF05
