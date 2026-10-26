@@ -33,19 +33,19 @@ def safe_broadcast_join(
     small: DataFrame,
     on: Sequence[str],
     how: str = "inner",
-    max_rows: int = 200_000,
+    max_small_rows: int = 200_000,
 ) -> DataFrame:
     """Une `large` con `small`, forzando broadcast solo si `small` es realmente chico.
 
     Cuenta las filas de `small` (una acción sobre el lado pequeño) y aplica
-    `F.broadcast` si no supera `max_rows`. Si lo supera, deja que Spark/AQE
+    `F.broadcast` si no supera `max_small_rows`. Si lo supera, deja que Spark/AQE
     elija la estrategia. `large` nunca se broadcastea.
     """
     small_rows = small.count()
-    if small_rows <= max_rows:
-        _log.info("Broadcasting small side (%s rows <= %s)", small_rows, max_rows)
+    if small_rows <= max_small_rows:
+        _log.info("Broadcasting small side (%s rows <= %s)", small_rows, max_small_rows)
         return large.join(F.broadcast(small), on=list(on), how=how)
-    _log.warning("Small side has %s rows (> %s); skipping forced broadcast", small_rows, max_rows)
+    _log.warning("Small side has %s rows (> %s); skipping forced broadcast", small_rows, max_small_rows)
     return large.join(small, on=list(on), how=how)
 
 
