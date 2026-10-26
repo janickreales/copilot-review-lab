@@ -39,20 +39,21 @@ results += check_not_null(
 results.append(check_unique(orders, "bronze_orders", ["o_orderkey"], q.max_duplicate_ratio, orders_total))
 
 lineitem = spark.table(cfg.table("bronze_lineitem"))
-lineitem_total = lineitem.count()
 results += check_not_null(
     lineitem,
     "bronze_lineitem",
     ["l_orderkey", "l_linenumber", "l_partkey", "l_suppkey"],
     q.max_null_ratio,
-    lineitem_total,
+    lineitem.count(),
 )
 results.append(
-    check_unique(lineitem, "bronze_lineitem", ["l_orderkey", "l_linenumber"], q.max_duplicate_ratio, lineitem_total)
+    check_unique(lineitem, "bronze_lineitem", ["l_orderkey", "l_linenumber"], q.max_duplicate_ratio, lineitem.count())
 )
 results.append(
-    check_range(lineitem, "bronze_lineitem", "l_discount", q.min_discount, q.max_discount, lineitem_total)
+    check_range(lineitem, "bronze_lineitem", "l_discount", q.min_discount, q.max_discount, lineitem.count())
 )
+sample_keys = [row.l_orderkey for row in lineitem.select("l_orderkey").collect()][:10]
+log.info("Sample lineitem keys: %s", sample_keys)
 
 partsupp = spark.table(cfg.table("bronze_partsupp"))
 results.append(
