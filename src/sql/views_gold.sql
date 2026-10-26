@@ -24,7 +24,10 @@ SELECT
     s.s_suppkey,
     s.s_name,
     s.nation,
+    g.region,
     s.profit,
     s.revenue,
     dense_rank() OVER (ORDER BY s.profit DESC) AS profit_rank
-FROM gold_supplier_profit AS s;
+FROM gold_supplier_profit AS s
+INNER JOIN gold_margin_by_nation_year AS g
+    ON s.nation = g.nation;
