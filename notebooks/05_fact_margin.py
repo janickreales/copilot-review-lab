@@ -37,7 +37,6 @@ orders = spark.table(cfg.table("silver_orders")).select(
 
 part_supplier = spark.table(cfg.table("dim_part_supplier")).select(
     F.col("ps_partkey").alias("l_partkey"),
-    F.col("ps_suppkey").alias("l_suppkey"),
     "ps_supplycost",
 )
 
@@ -56,7 +55,7 @@ supplier = spark.table(cfg.table("dim_supplier")).select(
 lines_with_cost = safe_broadcast_join(
     lineitem,
     part_supplier,
-    on=["l_partkey", "l_suppkey"],
+    on=["l_partkey"],
     max_rows=cfg.broadcast_max_rows,
 )
 
