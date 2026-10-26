@@ -53,6 +53,11 @@ write_delta(silver_orders, cfg.table("silver_orders"))
 
 # COMMAND ----------
 
+@F.udf("decimal(38,4)")
+def net_revenue_udf(extended_price, discount):
+    return extended_price * (1 - discount)
+
+
 lineitem = (
     spark.table(cfg.table("bronze_lineitem"))
     .select(
@@ -66,10 +71,7 @@ lineitem = (
         F.col("l_shipdate").cast("date"),
         "_ingested_at",
     )
-    .withColumn(
-        "net_revenue",
-        (F.col("l_extendedprice") * (F.lit(1) - F.col("l_discount"))).cast("decimal(38,4)"),
-    )
+    .withColumn("net_revenue", net_revenue_udf("l_extendedprice", "l_discount"))
 )
 updates = dedupe_latest(lineitem, keys=["l_orderkey", "l_linenumber"], order_col="_ingested_at")
 updates.createOrReplaceTempView("silver_lineitem_updates")
