@@ -48,7 +48,7 @@ results += check_not_null(
     lineitem_total,
 )
 results.append(
-    check_unique(lineitem, "bronze_lineitem", ["l_orderkey", "l_linenumber"], q.max_duplicate_ratio, lineitem_total)
+    check_unique(lineitem, "bronze_lineitem", ["l_orderkey", "l_linenumber"], q.max_duplicate_ratio, orders_total)
 )
 results.append(
     check_range(lineitem, "bronze_lineitem", "l_discount", q.min_discount, q.max_discount, lineitem_total)
