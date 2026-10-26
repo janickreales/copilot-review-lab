@@ -44,7 +44,7 @@ SELECT
     sum(revenue) AS revenue,
     sum(cost) AS cost,
     sum(profit) AS profit,
-    round(try_divide(sum(profit), sum(revenue)) * 100, 2) AS margin_pct
+    round(sum(profit) / sum(revenue) * 100, 2) AS margin_pct
 FROM fact_margin
 GROUP BY nation, region, order_year;
 
