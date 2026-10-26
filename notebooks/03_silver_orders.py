@@ -71,7 +71,7 @@ lineitem = (
         (F.col("l_extendedprice") * (F.lit(1) - F.col("l_discount"))).cast("decimal(38,4)"),
     )
 )
-updates = dedupe_latest(lineitem, keys=["l_orderkey", "l_linenumber"], order_col="_ingested_at")
+updates = lineitem.dropDuplicates()
 updates.createOrReplaceTempView("silver_lineitem_updates")
 
 run_sql_file(
