@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0097",
+  "table": "bronze_lineitem",
+  "column": "l_linenumber",
+  "check": "not_null",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_lineitem.l_linenumber"
+}

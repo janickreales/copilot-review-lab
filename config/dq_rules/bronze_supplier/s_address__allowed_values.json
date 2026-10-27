@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0332",
+  "table": "bronze_supplier",
+  "column": "s_address",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_supplier.s_address"
+}

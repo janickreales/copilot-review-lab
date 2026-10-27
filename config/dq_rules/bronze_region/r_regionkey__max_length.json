@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0405",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "max_length",
+  "severity": "error",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_region.r_regionkey"
+}

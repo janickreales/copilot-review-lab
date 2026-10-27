@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0330",
+  "table": "bronze_supplier",
+  "column": "s_address",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_supplier.s_address"
+}

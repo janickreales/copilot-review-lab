@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0063",
+  "table": "bronze_orders",
+  "column": "o_shippriority",
+  "check": "row_count_delta",
+  "severity": "error",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla row_count_delta sobre bronze_orders.o_shippriority"
+}

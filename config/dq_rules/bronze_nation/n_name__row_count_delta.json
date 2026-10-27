@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0383",
+  "table": "bronze_nation",
+  "column": "n_name",
+  "check": "row_count_delta",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla row_count_delta sobre bronze_nation.n_name"
+}

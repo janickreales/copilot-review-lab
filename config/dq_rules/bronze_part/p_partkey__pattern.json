@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0208",
+  "table": "bronze_part",
+  "column": "p_partkey",
+  "check": "pattern",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_part.p_partkey"
+}

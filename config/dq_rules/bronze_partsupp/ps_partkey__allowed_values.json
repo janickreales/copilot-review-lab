@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0276",
+  "table": "bronze_partsupp",
+  "column": "ps_partkey",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_partsupp.ps_partkey"
+}

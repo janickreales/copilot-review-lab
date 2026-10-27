@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0340",
+  "table": "bronze_supplier",
+  "column": "s_nationkey",
+  "check": "allowed_values",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_supplier.s_nationkey"
+}

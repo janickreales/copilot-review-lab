@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0408",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "pattern",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_region.r_regionkey"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0323",
+  "table": "bronze_supplier",
+  "column": "s_name",
+  "check": "range",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_supplier.s_name"
+}

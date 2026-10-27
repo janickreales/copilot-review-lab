@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0292",
+  "table": "bronze_partsupp",
+  "column": "ps_availqty",
+  "check": "allowed_values",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_partsupp.ps_availqty"
+}

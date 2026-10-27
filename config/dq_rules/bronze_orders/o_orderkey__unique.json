@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0002",
+  "table": "bronze_orders",
+  "column": "o_orderkey",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_orders.o_orderkey"
+}

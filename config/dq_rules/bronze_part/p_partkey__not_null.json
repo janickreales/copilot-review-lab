@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0201",
+  "table": "bronze_part",
+  "column": "p_partkey",
+  "check": "not_null",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_part.p_partkey"
+}

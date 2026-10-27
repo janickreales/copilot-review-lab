@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0227",
+  "table": "bronze_part",
+  "column": "p_brand",
+  "check": "range",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_part.p_brand"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0182",
+  "table": "bronze_lineitem",
+  "column": "l_shipinstruct",
+  "check": "freshness",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla freshness sobre bronze_lineitem.l_shipinstruct"
+}

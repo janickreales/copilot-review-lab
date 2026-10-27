@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0146",
+  "table": "bronze_lineitem",
+  "column": "l_linestatus",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_lineitem.l_linestatus"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0406",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "freshness",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla freshness sobre bronze_region.r_regionkey"
+}

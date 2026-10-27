@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0286",
+  "table": "bronze_partsupp",
+  "column": "ps_suppkey",
+  "check": "freshness",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla freshness sobre bronze_partsupp.ps_suppkey"
+}

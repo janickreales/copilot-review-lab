@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0252",
+  "table": "bronze_part",
+  "column": "p_container",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_part.p_container"
+}

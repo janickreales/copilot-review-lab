@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0325",
+  "table": "bronze_supplier",
+  "column": "s_name",
+  "check": "max_length",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_supplier.s_name"
+}
