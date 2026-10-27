@@ -28,3 +28,13 @@ SELECT
     s.revenue,
     dense_rank() OVER (ORDER BY s.profit DESC) AS profit_rank
 FROM gold_supplier_profit AS s;
+
+CREATE OR REPLACE VIEW v_region_margin
+AS
+SELECT
+    g.region,
+    g.order_year,
+    sum(g.revenue) AS revenue,
+    sum(g.profit) AS profit
+FROM gold_margin_by_nation_year AS g
+GROUP BY g.region, g.order_year;

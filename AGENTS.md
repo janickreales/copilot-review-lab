@@ -16,3 +16,4 @@ Resumen de las decisiones de diseño (detalle en `DECISIONS.md`). Aplica a cualq
 Además:
 - Preferir expresiones nativas de Spark a UDF de Python.
 - No hacer `collect()` de tablas completas al driver.
+- Nombres de tablas y vistas en snake_case.
