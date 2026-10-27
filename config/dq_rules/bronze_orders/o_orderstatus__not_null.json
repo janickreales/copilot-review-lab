@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0017",
+  "table": "bronze_orders",
+  "column": "o_orderstatus",
+  "check": "not_null",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_orders.o_orderstatus"
+}

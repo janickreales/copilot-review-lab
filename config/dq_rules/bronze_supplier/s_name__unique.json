@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0322",
+  "table": "bronze_supplier",
+  "column": "s_name",
+  "check": "unique",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_supplier.s_name"
+}

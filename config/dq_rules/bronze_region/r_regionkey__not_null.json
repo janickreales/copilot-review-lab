@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0401",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "not_null",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_region.r_regionkey"
+}

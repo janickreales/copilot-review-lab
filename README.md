@@ -11,6 +11,7 @@ Pipeline medallion sobre `samples.tpch`: calcula ingreso, costo, utilidad y marg
 | `databricks.yml` | Bundle con targets `dev` y `prod` y variables `env`, `catalog`, `schema` |
 | `resources/margin_job.yml` | Job `margin_pipeline` (DAG de 8 tasks) y job `margin_pipeline_orchestrated` (un notebook que ejecuta los demás) |
 | `config/<env>.json` | Fechas, filtros y umbrales por ambiente |
+| `config/dq_rules/` | Catálogo de reglas de calidad por tabla y columna (una regla por archivo) |
 | `src/utils/` | Librería compartida: config, helpers de Spark, calidad, logging |
 | `src/sql/` | DDL de bronze, MERGE de silver, vistas gold |
 | `notebooks/` | 9 notebooks: 5 `.py` (Source), 3 `.ipynb`, 1 `.sql` (Source) |

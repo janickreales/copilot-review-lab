@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0400",
+  "table": "bronze_nation",
+  "column": "n_comment",
+  "check": "pattern",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_nation.n_comment"
+}

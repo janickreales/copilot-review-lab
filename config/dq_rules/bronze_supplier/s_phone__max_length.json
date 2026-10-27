@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0349",
+  "table": "bronze_supplier",
+  "column": "s_phone",
+  "check": "max_length",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_supplier.s_phone"
+}

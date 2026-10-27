@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0221",
+  "table": "bronze_part",
+  "column": "p_mfgr",
+  "check": "max_length",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_part.p_mfgr"
+}

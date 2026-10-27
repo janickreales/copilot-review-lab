@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0354",
+  "table": "bronze_supplier",
+  "column": "s_acctbal",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_supplier.s_acctbal"
+}

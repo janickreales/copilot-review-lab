@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0378",
+  "table": "bronze_nation",
+  "column": "n_name",
+  "check": "unique",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_nation.n_name"
+}

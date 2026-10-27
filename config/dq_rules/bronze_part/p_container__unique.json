@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0250",
+  "table": "bronze_part",
+  "column": "p_container",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_part.p_container"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0197",
+  "table": "bronze_lineitem",
+  "column": "l_comment",
+  "check": "max_length",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_lineitem.l_comment"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0397",
+  "table": "bronze_nation",
+  "column": "n_comment",
+  "check": "max_length",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_nation.n_comment"
+}

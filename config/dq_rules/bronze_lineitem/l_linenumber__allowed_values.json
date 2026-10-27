@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0100",
+  "table": "bronze_lineitem",
+  "column": "l_linenumber",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_lineitem.l_linenumber"
+}

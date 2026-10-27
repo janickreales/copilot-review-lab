@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0296",
+  "table": "bronze_partsupp",
+  "column": "ps_availqty",
+  "check": "pattern",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_partsupp.ps_availqty"
+}

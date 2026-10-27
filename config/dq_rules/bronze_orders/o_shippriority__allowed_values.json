@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0060",
+  "table": "bronze_orders",
+  "column": "o_shippriority",
+  "check": "allowed_values",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_orders.o_shippriority"
+}

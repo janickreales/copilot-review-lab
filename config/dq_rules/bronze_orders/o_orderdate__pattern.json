@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0040",
+  "table": "bronze_orders",
+  "column": "o_orderdate",
+  "check": "pattern",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_orders.o_orderdate"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0368",
+  "table": "bronze_supplier",
+  "column": "s_comment",
+  "check": "pattern",
+  "severity": "error",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla pattern sobre bronze_supplier.s_comment"
+}

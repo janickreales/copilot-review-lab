@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0260",
+  "table": "bronze_part",
+  "column": "p_retailprice",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_part.p_retailprice"
+}

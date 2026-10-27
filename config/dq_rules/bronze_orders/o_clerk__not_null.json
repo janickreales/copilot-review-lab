@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0049",
+  "table": "bronze_orders",
+  "column": "o_clerk",
+  "check": "not_null",
+  "severity": "error",
+  "threshold": 0.05,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_orders.o_clerk"
+}

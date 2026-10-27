@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0154",
+  "table": "bronze_lineitem",
+  "column": "l_shipdate",
+  "check": "unique",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_lineitem.l_shipdate"
+}

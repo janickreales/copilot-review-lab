@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0186",
+  "table": "bronze_lineitem",
+  "column": "l_shipmode",
+  "check": "unique",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_lineitem.l_shipmode"
+}
