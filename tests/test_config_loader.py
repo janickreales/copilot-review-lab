@@ -51,3 +51,10 @@ def test_load_config_rejects_inverted_dates(tmp_path):
 
     with pytest.raises(ValueError, match="after date_to"):
         load_config("dev", "workspace", "margin_dev", str(tmp_path))
+
+
+def test_table_rejects_invalid_names(config_dir):
+    cfg = load_config("dev", "workspace", "margin_dev", config_dir)
+
+    with pytest.raises(ValueError):
+        cfg.table("fact-margin")
