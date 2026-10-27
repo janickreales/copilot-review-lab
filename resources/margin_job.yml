@@ -12,6 +12,8 @@ resources:
           default: ${var.catalog}
         - name: schema
           default: ${var.schema}
+        - name: part_name_filter
+          default: ${var.part_name_filter}
         - name: run_id
           default: "{{job.run_id}}"
 
@@ -81,6 +83,8 @@ resources:
           default: ${var.catalog}
         - name: schema
           default: ${var.schema}
+        - name: part_name_filter
+          default: ${var.part_name_filter}
         - name: run_id
           default: "{{job.run_id}}"
 

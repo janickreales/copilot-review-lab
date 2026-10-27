@@ -20,6 +20,9 @@ variables:
   schema:
     description: Esquema de destino de todas las capas
     default: margin_dev
+  part_name_filter:
+    description: Filtro por nombre de parte para dim_part_supplier
+    default: green
   schedule_pause_status:
     description: Estado del schedule del job (PAUSED en dev)
     default: PAUSED
