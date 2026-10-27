@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0110",
+  "table": "bronze_lineitem",
+  "column": "l_quantity",
+  "check": "freshness",
+  "severity": "error",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla freshness sobre bronze_lineitem.l_quantity"
+}

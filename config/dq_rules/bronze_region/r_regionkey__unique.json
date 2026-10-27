@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0402",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "unique",
+  "severity": "error",
+  "threshold": 0.05,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla unique sobre bronze_region.r_regionkey"
+}

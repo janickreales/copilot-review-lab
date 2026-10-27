@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0189",
+  "table": "bronze_lineitem",
+  "column": "l_shipmode",
+  "check": "max_length",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_lineitem.l_shipmode"
+}

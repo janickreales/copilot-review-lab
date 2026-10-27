@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0307",
+  "table": "bronze_partsupp",
+  "column": "ps_comment",
+  "check": "range",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_partsupp.ps_comment"
+}

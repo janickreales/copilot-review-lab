@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0247",
+  "table": "bronze_part",
+  "column": "p_size",
+  "check": "row_count_delta",
+  "severity": "error",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla row_count_delta sobre bronze_part.p_size"
+}

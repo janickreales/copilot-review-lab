@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0287",
+  "table": "bronze_partsupp",
+  "column": "ps_suppkey",
+  "check": "row_count_delta",
+  "severity": "warn",
+  "threshold": 0.01,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla row_count_delta sobre bronze_partsupp.ps_suppkey"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0003",
+  "table": "bronze_orders",
+  "column": "o_orderkey",
+  "check": "range",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_orders.o_orderkey"
+}

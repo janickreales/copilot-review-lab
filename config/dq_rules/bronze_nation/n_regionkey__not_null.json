@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0385",
+  "table": "bronze_nation",
+  "column": "n_regionkey",
+  "check": "not_null",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_nation.n_regionkey"
+}

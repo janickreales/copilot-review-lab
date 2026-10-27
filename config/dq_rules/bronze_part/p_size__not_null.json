@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0241",
+  "table": "bronze_part",
+  "column": "p_size",
+  "check": "not_null",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_part.p_size"
+}

@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0038",
+  "table": "bronze_orders",
+  "column": "o_orderdate",
+  "check": "freshness",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla freshness sobre bronze_orders.o_orderdate"
+}

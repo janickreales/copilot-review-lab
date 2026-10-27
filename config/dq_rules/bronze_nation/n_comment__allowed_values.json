@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0396",
+  "table": "bronze_nation",
+  "column": "n_comment",
+  "check": "allowed_values",
+  "severity": "warn",
+  "threshold": 0.05,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla allowed_values sobre bronze_nation.n_comment"
+}

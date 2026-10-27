@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0373",
+  "table": "bronze_nation",
+  "column": "n_nationkey",
+  "check": "max_length",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla max_length sobre bronze_nation.n_nationkey"
+}

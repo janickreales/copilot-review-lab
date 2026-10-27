@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0407",
+  "table": "bronze_region",
+  "column": "r_regionkey",
+  "check": "row_count_delta",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": false,
+  "owner": "data-platform",
+  "description": "Regla row_count_delta sobre bronze_region.r_regionkey"
+}

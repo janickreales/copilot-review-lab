@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0347",
+  "table": "bronze_supplier",
+  "column": "s_phone",
+  "check": "range",
+  "severity": "warn",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_supplier.s_phone"
+}

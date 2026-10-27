@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0329",
+  "table": "bronze_supplier",
+  "column": "s_address",
+  "check": "not_null",
+  "severity": "error",
+  "threshold": 0.0,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla not_null sobre bronze_supplier.s_address"
+}

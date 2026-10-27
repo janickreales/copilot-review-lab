@@ -1,0 +1,11 @@
+{
+  "rule_id": "DQ-0355",
+  "table": "bronze_supplier",
+  "column": "s_acctbal",
+  "check": "range",
+  "severity": "warn",
+  "threshold": 0.001,
+  "enabled": true,
+  "owner": "data-platform",
+  "description": "Regla range sobre bronze_supplier.s_acctbal"
+}
