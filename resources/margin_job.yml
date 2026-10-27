@@ -12,13 +12,15 @@ resources:
           default: ${var.catalog}
         - name: schema
           default: ${var.schema}
+        - name: part_name_filter
+          default: ${var.part_name_filter}
         - name: run_id
           default: "{{job.run_id}}"
 
       schedule:
         quartz_cron_expression: "0 0 6 * * ?"
         timezone_id: America/Bogota
-        pause_status: ${var.schedule_pause_status}
+        pause_status: UNPAUSED
 
       tasks:
         - task_key: setup
@@ -81,6 +83,8 @@ resources:
           default: ${var.catalog}
         - name: schema
           default: ${var.schema}
+        - name: part_name_filter
+          default: ${var.part_name_filter}
         - name: run_id
           default: "{{job.run_id}}"
 
