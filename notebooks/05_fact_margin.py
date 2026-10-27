@@ -23,7 +23,7 @@ import json
 
 from pyspark.sql import functions as F
 
-from src.utils.spark_helpers import safe_broadcast_join
+from src.utils.spark_helpers import safe_broadcast_join, write_delta
 
 # COMMAND ----------
 
@@ -87,13 +87,7 @@ fact = (
     )
 )
 
-(
-    fact.write.format("delta")
-    .mode("overwrite")
-    .option("overwriteSchema", "true")
-    .partitionBy("order_year", "nation")
-    .saveAsTable(cfg.table("fact_margin"))
-)
+write_delta(fact, cfg.table("fact_margin"))
 
 # COMMAND ----------
 
