@@ -1,0 +1,9 @@
+# Dueños de los archivos que definen cómo revisa Copilot.
+# Con el ruleset "Require review from Code Owners", ningún cambio a estos
+# archivos llega a main sin la aprobación del dueño.
+.github/copilot-instructions.md   @janickreales
+.github/instructions/             @janickreales
+.github/skills/                   @janickreales
+AGENTS.md                         @janickreales
+DECISIONS.md                      @janickreales
+.github/CODEOWNERS                @janickreales
